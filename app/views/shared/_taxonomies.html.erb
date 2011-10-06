@@ -8,8 +8,22 @@
     -->
     <ul class="nav-list">
       <% taxonomy.root.children.each do |taxon| %>
+        <% 
+          class_str = ""
+          if taxonomy.root.children.first.eql?(taxon)
+            class_str = (@taxon and ([@taxon] + @taxon.ancestors).include?(taxon)) ? ' class="top_taxon_selected"' : ' class="top_taxon"' 
+          else
+            if taxonomy.root.children.last.eql?(taxon)
+              class_str = (@taxon and ([@taxon] + @taxon.ancestors).include?(taxon)) ? ' class="bottom_taxon_selected"' : ' class="bottom_taxon"' 
+            else
+              class_str = ' class="current"' if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon)
+            end
+          end
+          
+        -%>
 
-        <li<%== ' class="current"' if @taxon and ([@taxon] + @taxon.ancestors).include?(taxon) %><%== ' class="top_taxon"' if taxonomy.root.children.first.eql?(taxon) %>>
+        <li<%== class_str %> <%== 'style="margin-top:-35px;"' if !get_taxonomies.select{|t| !t.show_on_homepage? }.first.eql?(taxonomy) and taxonomy.root.children.first.eql?(taxon) %>>
+          
           <%= link_to taxon.name, seo_url(taxon) %>
           <% if taxon.children.any? %>
           <ul class="nav-list">
