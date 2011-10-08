@@ -1,0 +1,27 @@
+<div id="login_bar">
+<% if current_user %>
+  <%= t(:hello_user) %>, <%= link_to current_user.email, account_path %>!
+  <%= link_to t('logout'), destroy_user_session_path, {:id => 'log_out_link'} %>
+<% else %>
+  <%= t(:hello_user) %>, <%= link_to t('log_in'), login_path, {:id => 'log_in_link', :rel => '#login_overlay'} %>.
+  <div class="simple_overlay" id="login_overlay" style="display: none">
+    <% if defined?(SpreeSocial) %>
+    <div class="login_social_bar">
+      <div style="margin: 6px 0"><%= t(:sign_in_through_one_of_these_services) %>:</div>
+      <div style="margin: 6px 0">
+        <% AuthenticationMethod.where(:environment => ::Rails.env).each do |user| %>
+          <%= link_to(image_tag("social/#{user.preferred_provider}_32.png", :size => "32x32", :alt => "#{user.preferred_provider}"), user_authentication_omniauth_authorize_path(user.preferred_provider.to_sym), :title => t(:sign_in_with_provider, :provider => user.preferred_provider)) if user.active %>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    <div class="login_link_bar">
+      <div style="padding: 6px 0"><%= link_to t("create_a_new_account"), signup_path %></div>
+      <div style="padding: 6px 0"><%= link_to t("forgot_password"), new_user_password_path %></div>
+    </div>
+    <div class="login_form_bar">
+      <%= render :partial => "shared/login" %>
+    </div>
+  </div>
+<% end %>
+</div>

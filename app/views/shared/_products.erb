@@ -20,8 +20,9 @@
               <%= link_to small_image(product), product %>
           </div>
           <% end %>
-          <% unless taxon.icon(:normal).eql?("/images/default_taxon.png") %>
-          <div class="taxon-label" style="background:url(<%= taxon.icon(:normal) %>)"></div>
+          <% labeled_taxons = product.taxons.select{|t| !t.icon(:normal).eql?("/images/default_taxon.png")} -%>
+          <% unless labeled_taxons.empty? %>
+          <div class="taxon-label" style="background:url(<%= labeled_taxons.last.icon(:normal) %>)"></div>
           <% end %>
           
           <%= link_to raw(product.name), product, :class => 'product-name' %><span class="product-code">код <%= raw(product.sku) %></span>

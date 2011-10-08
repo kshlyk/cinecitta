@@ -1,3 +1,26 @@
+#flag_1{
+    background:url(/images/flag_1.png) top left no-repeat;
+    padding: 2px 0 0 45px;
+    font-size:10px;
+    position:absolute;
+    margin-left:-130px;
+}
+
+#flag_2{
+    background:url(/images/flag_2.png) top left no-repeat;
+    padding: 0px 0 0 45px;
+    position:absolute;
+    font-size:10px;
+    margin-left:515px;
+
+}
+
+#phone_number {
+  font-size:18px;
+  font-weight:bold;
+  float:right;
+}
+
 .taxon-label {
     height:28px;
     width: 93px;
@@ -6,11 +29,18 @@
     margin-left:43px;
 }
 
-.best_seller {
-    height:28px;
-    width: 93px;
-    background: url(/images/best_price.png);
-    background-repeat: no-repeat;
+div#login_bar {
+  margin-top:10px;
+  float:left;
+  color:#5d292b;
+  font-size:12px;
+  font-family:'Open Sans', sans-serif;
+}
+div#login_bar a{
+  color:#5d292b;
+}
+div#login_bar a:hover{
+  text-decoration:underline;
 }
 
 body.one-col .content {
@@ -38,8 +68,8 @@ body {
 }
 
 body, td, form {
-  font-family: Verdana, sans-serif;
-  font-size: 9pt;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,16 +112,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header_panel #keywords:focus {
-  background: url("../images/search_textinput_active.png") no-repeat;
+  background: url("/images/search_bg.png") no-repeat;
 }
 
 .header_panel #keywords {
-  width: 250px;
+  width: 204px;
   height: 22px;
-  background: url("../images/search_textinput.png") no-repeat;
+  background: url("/images/search_bg.png") no-repeat;
   border: none;
-  vertical-align: bottom;
-  padding-left: 10px;
+  vertical-align: middle;
+  padding-left: 5px;
+  margin-top:10px;
+  color: #5d292b;
+  font-family: 'Open Sans', sans-serif;
+  font-size:12px;
+  float:left;
 }
 
 .header_panel > ul {
@@ -161,6 +196,7 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   padding-bottom: 3px;
   cursor: pointer;
+  display:none;
 }
 
 .header_panel a.empty, .header_panel a.full {
@@ -172,11 +208,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a.empty {
-    background: url("/images/cart.png") no-repeat left center;
+  float: right;
+  background: url("/images/cart.png") no-repeat left center;
 }
 
 a.full{
-    background: url("/images/cart_full.png") no-repeat left center;
+  float: right;
+  background: url("/images/cart_full.png") no-repeat left center;
 }
 
 .header_panel #compare_products {
@@ -985,7 +1023,10 @@ div.star-rating-hover a {
   /*margin-top: 1em;*/
   float: left;
 }
-
+div#header_menu{
+    margin-top:25px;
+    margin-left:10px;
+}
 ul.header_menu {
   float: left;
   margin-right: 0;

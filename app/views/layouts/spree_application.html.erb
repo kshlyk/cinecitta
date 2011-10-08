@@ -22,18 +22,39 @@
       <ul>
         <li style="width:250px"><div><%= link_to image_tag("top_logo.png", :alt => ""), root_url %></div></li>
         <li class="header_panel_search">
+          <div id="flag_1">Made in Italy</div>
+          <div id="flag_2">Эксклюзивный<br/>дистрибьютор</div>
           <div id="header_menu">
-            <ul class="header_menu">
-              <% for page in Page.header_links do %>
-                <li><%= link_to page.title, page.link %></li>
-              <% end %>
-            </ul>
+            <table class="" width="100%">
+              <tr>
+                <td>
+                  <ul class="header_menu">
+                    <% for page in Page.header_links do %>
+                      <li<%== ' style="margin-left:-15px;"' if Page.header_links.first.eql?(page) %>><%= link_to page.title, page.link %></li>
+                    <% end %>
+                  </ul>
+                </td>
+                <td><span id="phone_number">(495) 230-22-96</span></td>
+              </tr>
+              <tr>
+                <td colspan="2" >
+                  <%= render 'shared/search' %>
+                  <%= hook :shared_login_bar %>
+                  <%= link_to_cart %>
+                </td>
+              </tr>
+            </table>
+            
+            
+          <!--
+          
+          
+          <div></div>
+          -->
           </div>
-          <%= hook :shared_login_bar %>
-          <%#= render 'shared/search' %>
         </li>
         <li class="header_panel_cart">
-          <div><%= link_to_cart %></div>
+          
         </li>
         <% if defined?(SpreeCompareProducts) %>
         <li class="header_panel_compare_product">
