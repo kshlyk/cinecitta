@@ -1,3 +1,18 @@
+.taxon-label {
+    height:28px;
+    width: 93px;
+    background-repeat: no-repeat;
+    margin-top:-15px;
+    margin-left:43px;
+}
+
+.best_seller {
+    height:28px;
+    width: 93px;
+    background: url(/images/best_price.png);
+    background-repeat: no-repeat;
+}
+
 body.one-col .content {
   margin-left: auto;
   width: 1020px !important;
