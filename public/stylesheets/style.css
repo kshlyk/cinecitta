@@ -924,13 +924,24 @@ ul.thumbnails li a img {
 }
 
 .add-to-cart {
-  background: url(/images/product/add-to-cart.png) no-repeat !important;
+    float:right;
+    margin: -105px 45px 0 0;
+    background: url(/images/product/add-to-cart.png) no-repeat !important;
     width: 167px;
     height: 39px;
-  color: black;
-border-width: 0px !important;
-  font-size: 10pt !important;
-  text-transform: none;
+    color: #333333;
+    -moz-text-shadow: 0px 1px 0px #AAA;
+    -webkit-text-shadow: 0px 1px 0px #AAA;
+    text-shadow: 0px 1px 0px #AAA;
+    border-radius: 0px;
+    border-radius: 0px;
+    border-width: 0px !important;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px !important;
+    font-weight: bold;
+    text-align: left;
+    padding: 0 0 5px 15px;
+    text-transform: none;
 }
 
 .add-to-cart:hover {
