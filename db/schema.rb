@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(:version => 20110510080413) do
   add_index "assets", ["viewable_id"], :name => "index_assets_on_viewable_id"
   add_index "assets", ["viewable_type", "type"], :name => "index_assets_on_viewable_type_and_type"
 
+  create_table "blog_entries", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "calculators", :force => true do |t|
     t.string   "type"
     t.integer  "calculable_id",   :null => false
@@ -469,6 +477,22 @@ ActiveRecord::Schema.define(:version => 20110510080413) do
     t.string  "abbr"
     t.integer "country_id"
   end
+
+  create_table "taggings", :force => true do |t|
+    t.integer "tag_id"
+    t.string  "taggable_type", :default => ""
+    t.integer "taggable_id"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type"], :name => "index_taggings_on_taggable_id_and_taggable_type"
+
+  create_table "tags", :force => true do |t|
+    t.string "name", :default => ""
+    t.string "kind", :default => ""
+  end
+
+  add_index "tags", ["name", "kind"], :name => "index_tags_on_name_and_kind"
 
   create_table "tax_categories", :force => true do |t|
     t.string   "name"

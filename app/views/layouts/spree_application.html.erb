@@ -112,12 +112,19 @@
             <div class="flash errors"><%= flash[:error] %></div>
           <% end %>
         </noscript>
-          <% if @taxonomies %> <img src="/images/product/girl.png"> <% end %>
-          <% @taxonomies.select{|t| t.show_on_homepage }.each do |taxonomy| %>
-            <% taxonomy.taxons.each do |taxon| %>
-              <%= render :partial => "shared/products", :locals => {:products => taxon_preview(taxon, 6), :taxon => taxon} %>
-            <% end %>
-          <% end if @taxonomies%>
+          <% if @taxonomies %>
+            <img src="/images/product/girl.png" />
+            <%= render :partial => "shared/news_short" %>
+            <div id="main_content">
+              <h1>Спецпредложения</h1>
+              <div class="hr stretch"></div>   
+              <% @taxonomies.select{|t| t.show_on_homepage }.each do |taxonomy| %>
+                <% taxonomy.taxons.each do |taxon| %>
+                  <%= render :partial => "shared/products", :locals => {:products => taxon_preview(taxon, 6), :taxon => taxon} %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
 
         <%= yield %>
       </div>

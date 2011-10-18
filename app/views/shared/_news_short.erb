@@ -1,0 +1,21 @@
+<% @blog_entries = BlogEntry.find(:all, :limit=>5) %>
+<div id="short-news-block">
+<div id="snews">Новости</div>
+<% if !@blog_entries.empty? %>
+  <ul id="short-blog-entries">
+    <% @blog_entries.each do |e| %>
+      <li class="short_blog_entry">
+        <%= link_to(image_tag(e.blog_entry_image.attachment.url(:mini)), entry_permalink(e), :class=>"blog_short_image") if e.blog_entry_image %>
+        <div class="short_blog_content">
+          <div class="date">
+            <%= l( e.created_at.to_date, :format => :long) %>
+          </div>
+          <%= link_to e.title, entry_permalink(e) %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p id="no_entries"><%= t('no_blog_entries') %></p>
+<% end %>
+</div>
