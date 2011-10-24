@@ -40,7 +40,13 @@
                 <td colspan="2" >
                   <%= render 'shared/search' %>
                   <%= hook :shared_login_bar %>
-                  <%= link_to_cart %>
+                    <%= link_to_cart %>
+                    <% if current_order.nil? or current_order.line_items.empty? -%>
+                    <% else -%>
+                      <div class='cart_item_count'><%= current_order.item_count %></div>
+                    <% end -%>
+                    
+
                 </td>
               </tr>
             </table>

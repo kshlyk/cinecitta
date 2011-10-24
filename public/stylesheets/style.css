@@ -1035,6 +1035,16 @@ ul.thumbnails li a img {
   color: black;
 }
 
+.cart_item_count {
+    color:white;
+    width: 15px;
+    height: 10px;
+    display: block;
+    float: right;
+    font-weight: bold;
+    margin-right: -40px;
+    margin-top: 4px;
+}
 .add-to-cart {
     float:right;
     margin: -105px 45px 0 0;
