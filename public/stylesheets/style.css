@@ -796,7 +796,7 @@ h2 a:hover {
 }
 
 #product-variants ul {
-      float: left;
+  float: left;
   margin-top:20px;
   width: auto;
   white-space: nowrap;
