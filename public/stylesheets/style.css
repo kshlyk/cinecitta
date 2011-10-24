@@ -170,10 +170,10 @@ div#main_content {
 }
 
 .taxon-label {
-    height:28px;
+    height:35px;
     width: 93px;
     background-repeat: no-repeat;
-    margin-top:-15px;
+    margin-top:-21px;
     margin-left:43px;
 }
 
@@ -478,6 +478,7 @@ ul.sidebar_menu li a:hover {
 .wrapper {
 /*    height: 1417px;*/
 /*    background: url("/images/bg.gif") 0% 104px repeat;*/
+    margin-top: -4px;
     background: url("/images/product/main_bg.png") 0% 104px repeat;
     -webkit-background-size: 100% auto;
     -moz-background-size: 100% auto;
