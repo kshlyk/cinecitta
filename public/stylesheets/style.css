@@ -1155,6 +1155,20 @@ hr.space {
 
 .pagination {
   clear: both;
+  font-weight: bold;
+  color: #231F20; 
+  font-size: 15px;
+}
+.pagination em {
+  font-weight: bold;
+  color: #231F20; 
+  font-size: 16px;
+}
+
+.pagination a {
+    font-weight: bold;
+    color: #231F20; 
+    font-size: 15px;
 }
 
 .product-listing .rating-stars-container {
