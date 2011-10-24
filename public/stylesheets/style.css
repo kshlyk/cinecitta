@@ -740,7 +740,13 @@ h2 a:hover {
 }
 
 #product-variants {
+    float: left;
   text-align: left;
+  width: 747px;
+  height: 125px;
+    display: block;
+    overflow: hidden;
+  margin-top: -20px;
 }
 .product-variant{
     display:none;
@@ -783,13 +789,22 @@ h2 a:hover {
     color: #e1e2e3;
     font-weight: bold;
     font-size: 9px;
-    width:56px;
+    width:55px;
+    white-space:normal;
     text-align:center;
-    margin: 60px 0 0 0;
+/*    margin: 60px 0 0 0;*/
+}
+
+#product-variants ul {
+      float: left;
+  margin-top:20px;
+  width: auto;
+  white-space: nowrap;
 }
 
 #product-variants ul li {
     float: left;
+
 }
 
 #product-variants .price {
@@ -1341,6 +1356,7 @@ div#checkout #checkout_form_address #shipping .select_address input {
 
 #product-variants-container {
   clear: both;
+
 }
 
 .header_panel #keywords_submit:hover {
