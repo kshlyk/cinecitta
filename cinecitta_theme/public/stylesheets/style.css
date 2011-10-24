@@ -1089,3 +1089,16 @@ div#jGrowl div.jGrowl-notification.error {
   background: #a50000;
 }
 
+
+
+#short-news-block {
+    position: absolute;
+    top:80px;
+}
+
+#short_blog_content {
+    float: right;
+    border: 1px solid red;
+}
+
+

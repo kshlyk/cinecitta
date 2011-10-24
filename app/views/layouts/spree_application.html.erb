@@ -34,7 +34,7 @@
                     <% end %>
                   </ul>
                 </td>
-                <td><span id="phone_number">(495) 230-22-96</span></td>
+                <td><span id="phone_number">+7 (906) 720-70-70</span></td>
               </tr>
               <tr>
                 <td colspan="2" >
@@ -113,7 +113,11 @@
           <% end %>
         </noscript>
           <% if @taxonomies %>
-            <img src="/images/product/girl.png" />
+            <% 
+              img_id = 1+rand(3);
+              img_style = ["", "margin-left:-100px;", "margin-left:-80px;"];
+            %>
+            <img src="/images/product/woman<%= img_id %>.png" style="<%= img_style[img_id-1] %>"/>
             <%= render :partial => "shared/news_short" %>
             <div id="main_content">
               <h1>Спецпредложения</h1>
