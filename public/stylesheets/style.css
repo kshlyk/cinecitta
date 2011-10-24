@@ -639,12 +639,12 @@ div.taxon {
 }
 
 h2 a {
-  color: gray;
+  color: #4c1e21;
   text-decoration: none;
 }
 
 h2 a:hover {
-  color: gray;
+  color: #4c1e21;
   text-decoration: underline;
 }
 
@@ -844,6 +844,7 @@ button, a.button, input.button {
 body.two-col #content {
   float: left;
   padding:0px; margin:0px;
+  min-height: 550px;
 }
 
 #product_description_menu {
@@ -867,7 +868,7 @@ body.two-col #content {
 /*  width: 248px;*/
   width: 173px;
   vertical-align:top;
-  height: 260px;
+  height: 275px;
   font-family: 'Open Sans', sans-serif;
   text-align: left;
 }
