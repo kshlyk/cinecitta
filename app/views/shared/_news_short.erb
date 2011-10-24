@@ -6,6 +6,7 @@
     <% @blog_entries.each do |e| %>
       <li class="short_blog_entry">
         <%= link_to(image_tag(e.blog_entry_image.attachment.url(:mini)), entry_permalink(e), :class=>"blog_short_image") if e.blog_entry_image %>
+        <%#= image_tag(e.blog_entry_image.attachment.url(:mini), :class=>"blog_short_image") if e.blog_entry_image %>
         <div class="short_blog_content">
           <div class="date">
             <%= l( e.created_at.to_date, :format => :long) %>

@@ -1,0 +1,16 @@
+<h2><%= link_to e.title, entry_permalink(e) %></h2>
+
+<div class="date">
+  <%= l( e.created_at.to_date, :format => :long) %>
+</div>
+
+<div class="body">
+	<%= image_tag(e.blog_entry_image.attachment.url(:normal)) if e.blog_entry_image %>
+  <%= raw e.body %>
+</div>
+
+<% unless e.tag_list.empty? %>
+  <%= render :partial => 'tag_list', :locals => {:e => e}  %>
+<% end %>
+
+<br/>

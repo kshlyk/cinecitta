@@ -47,6 +47,7 @@ div#snews {
 .short_blog_entry .blog_short_image {
     float: left;
     width: 60px;
+    height: auto;
 }
 
 #short-news-block {
@@ -560,7 +561,7 @@ ul.nav-list li.bottom_taxon {
 ul.nav-list li {
   font-family: 'Open Sans', sans-serif;
   padding:0px;
-  font-size: 8pt;
+  font-size: 9pt;
   padding-left:15px;
   width: 168px;
   background: url("/images/left_tree/middle.png");
