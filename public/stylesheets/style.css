@@ -20,7 +20,8 @@ div#snews {
 
 
 #short-blog-entries {
-    width: 315px;
+    
+    width: 300px;
     list-style: none;
     margin: 0 0 0 0;
 }
@@ -52,9 +53,12 @@ div#snews {
 
 #short-news-block {
     position: absolute;
+    
     float: right;
-    top:300px;
-    margin-left: 450px;
+    z-index: 20;
+    margin: 210px 0 0 450px;
+/*    top:300px;*/
+/*    margin-left: 450px;*/
 }
 
 .short_blog_content {
@@ -93,9 +97,19 @@ div.hr {
     margin: 0px;
 }
 
+.girl_image {
+    z-index: 1;
+    position:absolute;
+/*    margin-left: -100px;*/
+    display: block;
+    
+}
+
 div#main_content {
-    margin-left: -250px;
-    width: 1000px;
+    margin-top:540px;
+    margin-left: -200px;
+    
+/*    width: 1000px;*/
 }
 
 .product_canvas div.product_canvas_image{
@@ -160,7 +174,7 @@ div#main_content {
     padding: 9px 0 0 45px;
     position:absolute;
     font-size:10px;
-    margin-left:515px;
+    margin-left:485px;
     display:block;
 }
 
@@ -170,6 +184,7 @@ div#main_content {
   float:right;
   margin-top: 12px;
   margin-bottom: -12px;
+  
 /*  position: absolute;*/
 /*  display: block;*/
 /*  margin-top:50px;*/
@@ -205,7 +220,7 @@ body.one-col .content {
 }
 
 body.two-col .content {
-  margin-left: 20px;
+/*  margin-left: 20px;*/
 }
 
 p img {
@@ -233,7 +248,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fixed_width {
-  width: 1058px;
+  width: 900px;
+/*  width: 1058px;*/
   padding-top:15px;
 }
 
@@ -248,7 +264,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header_panel {
-  width: 1024px;
+/*  width: 1024px;*/
   height: 102px;
   display: table;
   margin-top: 4px;
@@ -391,13 +407,15 @@ a.full{
 }
 
 .fixed_width {
-  width: 1020px;
+  width:950px;
+/*  width: 1020px;*/
 }
 
 .sidebar {
   float: left;
-  width: 250px;
+  width: 170px;
   text-align: left;
+/*  margin-left: 35px;*/
 }
 
 .sidebar ul {
@@ -489,11 +507,12 @@ ul.sidebar_menu li a:hover {
 /*    height: 1417px;*/
 /*    background: url("/images/bg.gif") 0% 104px repeat;*/
     margin-top: -4px;
+    z-index:-2;
     background: url("/images/product/main_bg.png") 0% 104px repeat;
-    -webkit-background-size: 100% auto;
-    -moz-background-size: 100% auto;
-    -o-background-size: 100% auto;
-    background-size: 100% auto;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
 }
 
 .footer_fake {
@@ -879,9 +898,10 @@ button, a.button, input.button {
 }
 
 body.two-col #content {
-  float: left;
+  float: right;
   padding:0px; margin:0px;
   min-height: 550px;
+  width: 745px !important;
 }
 
 #product_description_menu {

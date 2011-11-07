@@ -105,7 +105,7 @@
       -->
       <%= render :partial => 'shared/comparable_products' if defined?(SpreeCompareProducts) %>
       <% if content_for?(:sidebar) %>
-        <div class="sidebar">
+        <div class="sidebar" >
           <%= hook :sidebar do %>
             <%= yield :sidebar %>
           <% end %>
@@ -134,10 +134,10 @@
           <% if @taxonomies %>
             <% 
               img_id = 1+rand(3);
-              img_style = ["", "margin-left:-100px;", "margin-left:-80px;"];
-              mc_style = ["", "margin-top: 5px;", "margin-top: 55px;"]
+              img_style = ["", "margin-left:-100px;", "margin-left:-20px;"];
+              mc_style = ["", "", ""]
             %>
-            <img src="/images/product/woman<%= img_id %>.png" style="<%= img_style[img_id-1] %>"/>
+            <img src="/images/product/woman<%= img_id %>.png" style="<%= img_style[img_id-1] %>" class="girl_image"/>
             <%= render :partial => "shared/news_short" %>
             
             <div id="main_content" style="<%= mc_style[img_id-1] %>">
@@ -160,13 +160,13 @@
 </div>
 
 <div class="footer" align="center">
-  <div style="width:1024px; overflow:auto; color:#5D292B; padding-top: 10px; font-size: 13px; text-align:left;">
-    <div id="footer_left_content" style="float:left; width: 500px; ">
+  <div style="overflow:auto; color:#5D292B; padding-top:20px; font-size: 13px; text-align:left;   width: 950px !important;">
+    <div id="footer_left_content" style="float:left;">
     Представительство производителя итальянской<br/>
     декоративной косметики Cinecitta make up и Film maquillage в России.<br/>
     Школа визжа и боди-арта.
     </div>
-    <div id="footer_right_content" style="float:right; width: 500px; text-align: right;">
+    <div id="footer_right_content" style="float:right; text-align: right;">
     Телефон +7 (906) 720-70-70<br/>
     Почта <a href="mailto:makeupitaly@mail.ru" style="color:#5D292B">makeupitaly@mail.ru</a><br/>
     Российская федерация, Москва, Щелковское ш., 21А<br/>
