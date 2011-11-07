@@ -63,9 +63,9 @@ div#snews {
 }
 
 .short_blog_entry .date {
-    background: white;
+/*    background: white;*/
     width: 100px;
-    padding: 0 5px 0 5px;
+    padding: 0 5px 0 0px;
 }
 
 .short_blog_entry .short_blog_content {
@@ -149,7 +149,7 @@ div#main_content {
 
 #flag_1{
     background:url(/images/flag_1.png) top left no-repeat;
-    padding: 2px 0 0 45px;
+    padding: 9px 0 0 45px;
     font-size:10px;
     position:absolute;
     margin-left:-130px;
@@ -157,17 +157,22 @@ div#main_content {
 
 #flag_2{
     background:url(/images/flag_2.png) top left no-repeat;
-    padding: 0px 0 0 45px;
+    padding: 9px 0 0 45px;
     position:absolute;
     font-size:10px;
     margin-left:515px;
-
+    display:block;
 }
 
 #phone_number {
   font-size:18px;
   font-weight:bold;
   float:right;
+  margin-top: 12px;
+  margin-bottom: -12px;
+/*  position: absolute;*/
+/*  display: block;*/
+/*  margin-top:50px;*/
 }
 
 .taxon-label {
@@ -361,11 +366,13 @@ h1, h2, h3, h4, h5, h6 {
 
 a.empty {
   float: right;
+  margin-top:6px;
   background: url("/images/cart.png") no-repeat left center;
 }
 
 a.full{
   float: right;
+  margin-top: 2px;
   background: url("/images/cart_full.png") no-repeat left center;
 }
 
@@ -1057,7 +1064,7 @@ ul.thumbnails li a img {
     float: right;
     font-weight: bold;
     margin-right: -40px;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 .add-to-cart {
     float:right;
