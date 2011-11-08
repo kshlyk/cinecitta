@@ -28,8 +28,7 @@
   }
 </script>
 <% @body_id = 'product-details' %>
-<% s = @product.has_variants? ? "" : "height:253px; background:url(/images/product/all_1.png) top left no-repeat;" %>
-<div class="product_canvas" style="<%= s %>">
+<div class="product_canvas" >
   <div class="product_canvas_image">
     <div id="main-image">
         <%= render 'image' %>

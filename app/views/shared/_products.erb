@@ -1,6 +1,13 @@
 <%
   paginated_products = @searcher.products if params.key?(:keywords)
   paginated_products ||= products
+  
+  begin 
+    mpage = main_page
+  rescue
+    mpage = false
+  end
+  
 -%>
 <% if products.empty? %>
   <%= t(:no_products_found) %>
@@ -12,7 +19,7 @@
 <ul class="product-listing">
   <% products.each do |product| %>
     <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
-      <li id="product_<%= product.id %>">
+      <li id="product_<%= product.id %>" style="<%== 'margin-right: 65px; margin-bottom: 70px;' if mpage %>">
         <%= hook :products_list_item, {:product => product} do %>
           
           <%= hook :products_list_item_image, {:product => product} do %>

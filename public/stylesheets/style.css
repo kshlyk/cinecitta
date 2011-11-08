@@ -78,9 +78,11 @@ div#snews {
 }
 
 .product_canvas {
-    background:url(/images/product/all.png) no-repeat;
-    width:797px;
-    height:377px;
+    margin-left: -10px;
+/*    background:url(/images/product/nall.png) no-repeat;*/
+    background:url(/images/product/p_box.png) no-repeat;
+    width:730px;
+    height:254px;
     padding: 14px 32px 36px 18px;
 }
 
@@ -119,7 +121,7 @@ div#main_content {
 }
 .product_canvas div.product_canvas_description {
     float: left;
-    width: 539px;
+    width: 450px;
     height: 203px;
     padding: 22px 16px 16px 16px;
 }
@@ -144,7 +146,7 @@ div#main_content {
 .product_canvas div.product_canvas_description hr {
     background:#d6d1c8;
     margin: 5px 0 5px 0;
-    width: 473px;
+    width: 433px;
 }
 
 
@@ -214,7 +216,8 @@ div#login_bar a:hover{
 
 body.one-col .content {
   margin-left: auto;
-  width: 1020px !important;
+/*  width: 1020px !important;*/
+  width: 745px !important;
   padding:0px; margin:0px;
   min-height: 550px;
 }
@@ -782,13 +785,14 @@ h2 a:hover {
 #product-variants {
     float: left;
   text-align: left;
-  width: 747px;
-  height: 125px;
-    display: block;
-    overflow: hidden;
-  margin-top: -20px;
+/*  width: 747px;*/
+  width: 763px !important;
+  height: 400px;
+  display: block;
+  overflow: hidden;
+  margin: -53px 0 0 -18px;
 }
-.product-variant{
+.product-variant {
     display:none;
 }
 #product-variants label {
@@ -837,14 +841,20 @@ h2 a:hover {
 
 #product-variants ul {
   float: left;
-  margin-top:20px;
-  width: auto;
-  white-space: nowrap;
+/*  margin-top:20px;*/
+/*  width: auto;*/
+/*  border: 1px solid blue;*/
+  width: 735px !important;
+/*  height: 147px;*/
+  background:url(/images/product/p_bottom.png) no-repeat;
+  padding: 52px 55px 0 20px;
+/*  white-space: nowrap;*/
 }
 
 #product-variants ul li {
     float: left;
-
+    margin-bottom: 74px;
+    margin-left: 6px;
 }
 
 #product-variants .price {
@@ -901,7 +911,7 @@ body.two-col #content {
   float: right;
   padding:0px; margin:0px;
   min-height: 550px;
-  width: 745px !important;
+  width: 755px !important;
 }
 
 #product_description_menu {
@@ -1088,7 +1098,7 @@ ul.thumbnails li a img {
 }
 .add-to-cart {
     float:right;
-    margin: -105px 45px 0 0;
+    margin: -105px 10px 0 0;
     background: url(/images/product/add-to-cart.png) no-repeat !important;
     width: 167px;
     height: 39px;
