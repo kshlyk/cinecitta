@@ -23,7 +23,7 @@
         optioins_count += 1 unless (@product.variants.active.length%9).eql?(0)
         bg_css = "background:url(/images/product/p_bottom_#{optioins_count}.png) no-repeat;"
       %>
-      <ul style="height: 422px; <%== bg_css %>">
+      <ul style="<%== bg_css %>">
         <% has_checked = false
         @product.variants.active.each_with_index do |v,index|
           next if v.option_values.empty? || (!v.in_stock && !Spree::Config[:show_zero_stock_products])
