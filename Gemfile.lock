@@ -7,6 +7,13 @@ GIT
       spree_core (>= 0.30.0)
 
 GIT
+  remote: git://github.com/kalebwalton/spree-search-sku.git
+  revision: 3933a65b52e50d336666f215f2d74f9ecca4d74b
+  specs:
+    spree_search_sku (0.60.1)
+      spree_core (>= 0.60.1)
+
+GIT
   remote: git://github.com/spree/spree.git
   revision: 24455e9e5699cde92e208006aae7dec4ce5077e8
   branch: 0-60-stable
@@ -234,6 +241,7 @@ DEPENDENCIES
   spree!
   spree_blogging_spree!
   spree_i18n!
+  spree_search_sku!
   sqlite3
   synergy (~> 0.60.0)
   synergy_default_theme (~> 1.0.2)

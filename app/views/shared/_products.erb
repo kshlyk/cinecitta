@@ -33,12 +33,14 @@
           <% else -%>
           <div class="taxon-label" style=""></div>
           <% end -%>
-          
-          <%= link_to raw(product.name), product, :class => 'product-name' %><span class="product-code">код <%= raw(product.sku) %></span>
+          <span class="product-code">код <%= raw(product.sku) %></span><br/>
+          <div style="padding-left: 5px; padding-right:5px;">
+          <%= link_to raw(product.name), product, :class => 'product-name' %>
           <% if defined?(SpreeReviews) %>
             <div align="center" style="height: 15px;"><%= render 'shared/rating', :product => product %></div>
           <% end %>  
           <%= link_to raw("<span class='price selling'>#{product_price(product)}</span>"), product, :class => 'info' %>
+          </end>
         <% end %>
       </li>
     <% end %>

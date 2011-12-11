@@ -43,3 +43,4 @@ gem 'execjs'
 gem 'therubyracer'
 gem "cinecitta_theme", :require => "cinecitta_theme", :path => "cinecitta_theme"
 gem 'spree_blogging_spree', :git => 'git://github.com/divineforest/spree-blogging-spree.git'
+gem 'spree_search_sku', :git=>"git://github.com/kalebwalton/spree-search-sku.git"

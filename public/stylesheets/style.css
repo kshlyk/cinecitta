@@ -295,9 +295,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 204px;
   height: 22px;
   background: url("/images/search_bg.png") no-repeat;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+
   border: none;
   vertical-align: middle;
   padding-left: 5px;
+  margin-right: 10px;
   margin-top:10px;
   color: #5d292b;
   font-family: 'Open Sans', sans-serif;
@@ -982,7 +988,7 @@ body.two-col #content {
 }
 
 span.product-code {
-  background: #231f20;
+  background: #764649;
   padding: 1px 5px 1px 5px;
   color:white;
   font-size:12px; 
