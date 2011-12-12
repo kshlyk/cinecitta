@@ -79,11 +79,17 @@ div#snews {
 
 .product_canvas {
     margin-left: -10px;
+    display: inline-block;
 /*    background:url(/images/product/nall.png) no-repeat;*/
-    background:url(/images/product/p_box.png) no-repeat;
-    width:730px;
-    height:254px;
-    padding: 14px 32px 36px 18px;
+    background:url(/images/product/p_box1.png) no-repeat;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+    margin-bottom:-5px;
+    width:706px;
+/*    height:254px;*/
+    padding: 14px 32px 10px 25px;
 }
 
 div.hr {
@@ -122,14 +128,20 @@ div#main_content {
 .product_canvas div.product_canvas_description {
     float: left;
     width: 450px;
-    height: 203px;
+/*    height: 203px;*/
     padding: 22px 16px 16px 16px;
+/*      background: url("/images/search_bg.png") no-repeat;*/
+
 }
 .product_canvas div.product_canvas_description h2{
     color:#231f20;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 24px;
+}
+.product_canvas div.product_canvas_description p{
+    margin:0px;
+    padding:0px;
 }
 
 .product_canvas div.product_canvas_description span.code{
@@ -513,15 +525,13 @@ ul.sidebar_menu li a:hover {
 }
 
 .wrapper {
-/*    height: 1417px;*/
-/*    background: url("/images/bg.gif") 0% 104px repeat;*/
     margin-top: -4px;
     z-index:-2;
-    background: url("/images/product/main_bg.png") 0% 104px repeat;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
+    background: url("/images/product/new_bg.jpg") 0% 104px repeat-y;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
 }
 
 .footer_fake {
@@ -780,6 +790,10 @@ h2 a:hover {
 
 #cart-form {
   float: none;
+  overflow: auto;
+  width: 750px !important;
+  display: inline-block !important;
+  margin-left:8px;
 }
 
 #cart_wrapper {
@@ -1104,7 +1118,7 @@ ul.thumbnails li a img {
 }
 .add-to-cart {
     float:right;
-    margin: -105px 10px 0 0;
+    margin: -35px -40px 0 0;
     background: url(/images/product/add-to-cart.png) no-repeat !important;
     width: 167px;
     height: 39px;
@@ -1119,7 +1133,7 @@ ul.thumbnails li a img {
     font-size: 14px !important;
     font-weight: bold;
     text-align: left;
-    padding: 0 0 5px 15px;
+    padding: 0 0 0px 15px;
     text-transform: none;
 }
 
