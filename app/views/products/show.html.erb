@@ -28,7 +28,14 @@
   }
 </script>
 <% @body_id = 'product-details' %>
-<div class="product_canvas" >
+<% 
+  if @product.has_variants?
+    style = "background:url(/images/product/p_box1.png) no-repeat;"
+  else
+    style = "background:url(/images/product/p_box.png) no-repeat; padding-bottom:50px;"
+  end
+-%>
+<div class="product_canvas" style='<%= style %>'>
   <div class="product_canvas_image">
     <div id="main-image">
         <%= render 'image' %>
