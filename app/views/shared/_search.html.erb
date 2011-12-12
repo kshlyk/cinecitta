@@ -1,0 +1,14 @@
+<%= form_tag products_url, :method => :get do %>
+  <%= text_field_tag :keywords, params[:keywords] %><%= submit_tag t(:search), :name => nil, :id => 'keywords_submit' %>
+<% end %>
+<script>
+  $(document).ready(function() {
+    if($('#keywords').val()==""){
+      $('#keywords').val('Поиск...')
+                    .focus(function(){ 
+                      $(this).val('')
+                    })
+    }
+      
+  })
+</script>

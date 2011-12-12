@@ -89,7 +89,7 @@ div#snews {
     margin-bottom:-5px;
     width:706px;
 /*    height:254px;*/
-    padding: 14px 32px 10px 25px;
+    padding: 16px 32px 10px 25px;
 }
 
 div.hr {
@@ -950,7 +950,7 @@ body.two-col #content {
 .product-listing li {
   background: none;
   border: 0px solid #d0d0d0;
-  margin: 0px 15px 15px 0;
+  margin: 0px 15px 30px 0;
   padding: 0 0 0 0;
 /*  width: 248px;*/
   width: 173px;
