@@ -256,7 +256,9 @@ body {
 body, td, form {
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
+
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Verdana, serif;
@@ -532,6 +534,8 @@ ul.sidebar_menu li a:hover {
     -moz-background-size: 100% auto;
     -o-background-size: 100% auto;
     background-size: 100% auto;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/product/new_bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/product/new_bg.jpg', sizingMethod='scale')";
 }
 
 .footer_fake {
@@ -1580,13 +1584,15 @@ div#jGrowl div.jGrowl-notification.error {
     -o-background-size: 100% 100%;
     background-size: 100% 100%;
     height: 183px;
-    width: 980px;
+    width: 930px;
+    display: inline-block;
+    margin-left: -50px;
     padding: 32px 0 0 35px;
     text-align: left;
 }
 
 .school_menu {
-    display: block;
+    display: inline-block;
     width: 100%;
     overflow: auto;
     list-style:none;
@@ -1615,7 +1621,7 @@ div#jGrowl div.jGrowl-notification.error {
 
 
 .timetable {
-    width: 1055px;
+    width: 920px;
     background-color: white;
 }
 .timetable td {
