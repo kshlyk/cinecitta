@@ -19,6 +19,9 @@
   <!--[if lt IE 7]>
           <script type="text/javascript" src="/unitpngfix.js"></script>
   <![endif]-->
+  <style>
+    h1 { display:none;}
+  </style>
 </head>
 <%
    if @body_class.nil?
@@ -96,18 +99,21 @@
       </ul>
     </div>
   </div>
+  
   <div align="center">
-    <div class="fixed_width">
-     <!--
-      <div id="top_panel">
-        <div id="top_login_bar">
-          <!-- Тут было login_bar
-        </div>
-        <!-- Тут было header_menu 
-      </div>
-      -->
+    <div id="school_header">
+      <img src="/images/school_logo.png" />
+    </div>
+    <div class="fixed_width" style="padding-top:0px;">
+
+    <ul class="school_menu">
+      <% for page in Page.footer_links do %>
+        <li class="<%= 'selected' if page.eql?(@page) %>"><%= link_to page.title, page.link %></li>
+      <% end %>
+    </ul>
+
       <%= render :partial => 'shared/comparable_products' if defined?(SpreeCompareProducts) %>
-      <% if content_for?(:sidebar) %>
+      <% if false %>
         <div class="sidebar" >
           <%= hook :sidebar do %>
             <%= yield :sidebar %>
@@ -124,7 +130,7 @@
           <% end %>
         </div>
       <% end %>
-      <div id="content" class="content">
+      <div id="content" class="content" style="width: 100%">
         <%= flash_messages %>
         <noscript>
           <% if flash[:notice] %>
@@ -177,15 +183,7 @@
     <a href="http://www.priyatnoesvidanie.ru"  style="color:#5D292B">www.priyatnoesvidanie.ru</a><br/>
     </div>
   </div>
-<!-- 
-<% cache 'footer_menu' do %>
-  <ul class="footer_menu">
-    <% for page in Page.footer_links do %>
-      <li><%= link_to page.title, page.link %></li>
-    <% end %>
-  </ul>
-<% end %>
--->
+
 </div>
 <%= hook :footer_right %>
 <% cache 'google_analytics' do %>

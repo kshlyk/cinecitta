@@ -17,4 +17,16 @@ module ApplicationHelper
     end
     link_to text, cart_path, :class => css_class
   end
+
+
+
+  def timetable
+    timetable = "";
+    require 'net/http'
+    h = Net::HTTP.new("www.artbanda.com", 80)
+    h.read_timeout = 500
+    resp = h.get("/school/timetable/",nil)
+    timetable = Iconv.iconv('utf-8', 'windows-1251',  resp.read_body).to_s.match(/(<table)([^>]*)(class="cld_month">)(.*?)(<\/table>)/)
+    "<table class='timetable'>#{timetable[4].html_safe.gsub(/h1/,'b').gsub(/font:14px arial;/, 'font:14px arial; text-align: center;').gsub(/style="font: 12px arial;"/,'').gsub(/span><span class="title"/, 'span><br/><span class="cld_title"')}</table>".html_safe
+  end
 end
