@@ -1654,6 +1654,19 @@ span.cld_title {
     font-family: Tahoma;
 }
 
+.next_school_link {
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+    color: #5D292B;
+    margin-right: -180px;
+}
+.pre_school_link {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    color: #5D292B;
+}
 
 
 
