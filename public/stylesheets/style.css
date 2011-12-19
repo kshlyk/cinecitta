@@ -826,7 +826,9 @@ h2 a:hover {
     margin: -15px 0 0 5px;
     width: 62px;
     z-index:0;
-    height: 62px;
+    height: 42px;
+    text-align: center;
+    padding-top: 20px;
     cursor: pointer;
 }
 #product-variants label.focused {

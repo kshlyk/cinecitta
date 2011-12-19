@@ -1,6 +1,6 @@
 
 <%= javascript_include_tag 'dragscrollable' %>
-
+<% i=1; -%>
 <%= form_for :order, :url => populate_orders_url, :html=>{:id=>'cartForm'} do |f| %>
 <%= hook :inside_product_cart_form do %>
   <% if @product.has_stock? || Spree::Config[:allow_backorders] %>
@@ -32,7 +32,9 @@
           %>
           <li style=" height:50px;">
               <%= radio_button_tag "products[#{@product.id}]", v.id, checked, :disabled => !v.in_stock && !Spree::Config[:allow_backorders], :class=>"product-variant #{'focused' if checked}" %>
-              <label for="products_<%= @product.id %>_<%= v.id %>" class="<%= 'focused' if checked %>"></label>
+              <label for="products_<%= @product.id %>_<%= v.id %>" class="<%= 'focused' if checked %>">
+                  <%= i %><% i+=1; -%>
+              </label>
                 <div class="product-color" style="background: <%== v.option_values.first.name %> !important;">
                   <div class="variant-cover">
                     <div class="variant-description"><%= v.option_values.first.presentation %></div>
