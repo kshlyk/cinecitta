@@ -1,0 +1,12 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1>Новое занятие</h1>
+
+<%= error_messages_for :event %>
+
+<% form_for(:event, :url => collection_url, :html => { :multipart => true }) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <p class="form-buttons">
+    <%= submit_tag t("create")%> или <%= link_to t("cancel"), admin_events_path%>
+  </p>
+<% end %>

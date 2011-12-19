@@ -117,6 +117,25 @@ ActiveRecord::Schema.define(:version => 20110510080413) do
     t.string   "gateway_payment_profile_id"
   end
 
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.text     "venue"
+    t.string   "sponsor"
+    t.string   "further_information"
+    t.text     "summary"
+    t.text     "full_description"
+    t.boolean  "visible"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "begin_event"
+    t.datetime "end_event"
+    t.string   "start_time"
+  end
+
   create_table "gateways", :force => true do |t|
     t.string   "type"
     t.string   "name"

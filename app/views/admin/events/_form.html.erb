@@ -1,0 +1,21 @@
+<% content_for :head do %>
+
+
+<% end %>
+
+<table class="admin-report" width="545">
+  <tr>
+    <td colspan="2">
+      <label>Название</label><br/>
+      <%= f.text_field :title, {"class" => "fullwidth title"} %>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <label>Дата проведения</label><br/>
+      <%= f.datetime_select :begin_event, {"class" => "fullwidth title"}  %>
+    </td>
+  </tr>
+
+</table>

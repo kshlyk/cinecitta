@@ -44,5 +44,6 @@ gem 'therubyracer'
 gem "cinecitta_theme", :require => "cinecitta_theme", :path => "cinecitta_theme"
 gem 'spree_blogging_spree', :git => 'git://github.com/divineforest/spree-blogging-spree.git'
 gem 'spree_search_sku', :git=>"git://github.com/kalebwalton/spree-search-sku.git"
+gem 'spree_events_list', '~> 0.50.0'
 #gem 'spree_essentials',    :git => 'git://github.com/citrus/spree_essentials.git'
 #gem 'spree_essential_cms', :git => 'git://github.com/citrus/spree_essential_cms.git'

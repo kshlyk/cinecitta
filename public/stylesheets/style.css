@@ -963,8 +963,8 @@ body.two-col #content {
 /*  width: 248px;*/
   width: 173px;
   vertical-align:top;
-/*  height: 275px;*/
-  height: auto;
+  height: 285px;
+/*  height: auto;*/
   font-family: 'Open Sans', sans-serif;
   text-align: left;
 }
