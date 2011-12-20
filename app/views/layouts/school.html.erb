@@ -22,6 +22,7 @@
   <style>
     h1 { display:none;}
   </style>
+  <%= javascript_include_tag 'css_browser_selector' %>
 </head>
 <%
    if @body_class.nil?
@@ -34,12 +35,17 @@
 %>
 
 <body class="<%= @body_class %>" id="<%= @body_id %>">
+<![if IE]>
+<div id="page-background" height="100%">
+  <img src="/images/product/new_bg.jpg" width="100%" alt="">
+</div>
+<![endif]-->
 <div style="display:none;"><img src="/images/bg.gif"></div> <!-- For caching background image -->
 <div class="wrapper">
   <div class="main_top" align="center">
     <div class="header_panel">
       <ul>
-        <li style="width:250px"><div><%= link_to image_tag("top_logo.png", :alt => ""), root_url %></div></li>
+        <li style="width:auto;"><div><%= link_to image_tag("top_logo.png", :alt => "", :class=>'top_logo'), root_url %></div></li>
         <li class="header_panel_search">
           <div id="flag_1">Made in Italy</div>
           <div id="flag_2">Эксклюзивный<br/>дистрибьютор</div>
@@ -189,6 +195,24 @@
 <% cache 'google_analytics' do %>
   <%= render 'shared/google_analytics' %>
 <% end %>
+
+<script type="text/javascript">
+  var ua = navigator.userAgent.toLowerCase();
+  var isOpera = (ua.indexOf('opera')  > -1);
+  var isIE = (!isOpera && ua.indexOf('msie') > -1);
+
+  function getViewportHeight() {
+    return ((document.compatMode || isIE) && !isOpera) ? (document.compatMode == 'CSS1Compat') ? document.documentElement.clientHeight : document.body.clientHeight : (document.parentWindow || document.defaultView).innerHeight;
+  }
+
+	function docHeight() {
+    return (Math.max(document.compatMode != 'CSS1Compat' ? document.body.scrollHeight : document.documentElement.scrollHeight, getViewportHeight()))+20;
+  }
+
+  document.getElementById('page-background').style.height=docHeight()+"px";
+
+  
+</script>
 </body>
 </html>
 

@@ -1,6 +1,6 @@
 <% content_for :head do %>
   <%#= javascript_include_tag 'nicEdit', 'nicEditConfig' %>
-  <%= stylesheet_link_tag 'blog' %>
+  <%#= stylesheet_link_tag 'blog' %>
 <% end %>
 
 <% if @blog_entry.errors.any? %>
@@ -9,9 +9,9 @@
   </div>
 <% end %>
 
-<p>
+<p style="width:650px">
   <%= form.label :title %> <span class="required">*</span><br />
-  <%= form.text_field :title %>
+  <%= form.text_field :title,  {"class" => "fullwidth title"} %>
   <%= form.error_message_on :title %>
 </p>
 
