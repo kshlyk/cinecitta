@@ -19,6 +19,7 @@
   <!--[if lt IE 7]>
     <script type="text/javascript" src="/unitpngfix.js"></script>
   <![endif]-->
+  <%= javascript_include_tag 'css_browser_selector' %>
 </head>
 <%
    if @body_class.nil?
@@ -36,7 +37,7 @@
   <div class="main_top" align="center">
     <div class="header_panel">
       <ul>
-        <li style="width:250px"><div><%= link_to image_tag("top_logo.png", :alt => ""), root_url %></div></li>
+        <li style="width:auto;"><%= link_to image_tag("top_logo.png", :alt => "", :class=>'top_logo'), root_url %></li>
         <li class="header_panel_search">
           <div id="flag_1">Made in Italy</div>
           <div id="flag_2">Эксклюзивный<br/>дистрибьютор</div>

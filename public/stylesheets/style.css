@@ -147,7 +147,7 @@ div#main_content {
 .product_canvas div.product_canvas_description span.code{
     background: #75494b;
     color: white;
-    font-family: 'Open Sans', sans-serif;
+    font-family: Tahoma;
     font-weight: bold;
     font-size: 10px;
     height: 20px;
@@ -202,6 +202,10 @@ div#main_content {
 /*  position: absolute;*/
 /*  display: block;*/
 /*  margin-top:50px;*/
+}
+.ie #phone_number {
+    font-size: 16px;
+    position: relative;
 }
 
 .taxon-label {
@@ -325,18 +329,24 @@ h1, h2, h3, h4, h5, h6 {
   float:left;
 }
 
+.top_logo {
+    margin-top: 32px;
+}
+
 .header_panel > ul {
   margin: 0;
   padding: 0;
+  width: 937px;
   list-style: none;
-  display: table-row;
+  display: block;
 }
 
 .header_panel > ul > li {
   height: 102px;
   vertical-align: middle;
   text-align: left;
-  display: table-cell;
+  float: left;
+  display: inline;
 }
 
 #comparable_products_wrapper h3 {
@@ -407,6 +417,9 @@ a.empty {
   float: right;
   margin-top:6px;
   background: url("/images/cart.png") no-repeat left center;
+}
+.ie a.empty {
+    margin-top: 5px;
 }
 
 a.full{
@@ -1376,8 +1389,8 @@ ul.header_menu li {
 ul.header_menu li a {
   color: #5d292b;
   font-weight:bold;
-  font-family: Arial, Sans;
-  font-size: 15px;
+  font-family: Arial;
+  font-size: 14px;
   text-decoration: underline;
 }
 
