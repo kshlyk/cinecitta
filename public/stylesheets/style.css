@@ -51,6 +51,10 @@ div#snews {
     height: auto;
 }
 
+.blog_entry {
+  overflow: auto;
+}
+
 #short-news-block {
     position: absolute;
     
