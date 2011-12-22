@@ -37,13 +37,6 @@
     bg = "/images/product/p_box.png"
   end
 -%>
-
-<div class="product_canvas" style='<%= style %>'>
-  <img src="<%= bg %>" class="product_canvas_bg">
-  <div class="product_canvas_image">
-    <div id="main-image">
-        <%= render 'image' %>
-    </div>
     <% if @product.images.any? %>
     <div class="simple_overlay" id="large_image_overlay" style="display: none;">
       <div class="overlay_container">
@@ -56,6 +49,13 @@
       </div>
     </div>
     <% end %>
+<div class="product_canvas" style='<%= style %>'>
+  <img src="<%= bg %>" class="product_canvas_bg">
+  <div class="product_canvas_image">
+    <div id="main-image">
+        <%= render 'image' %>
+    </div>
+
     <div id="thumbnails" style="display:none;">
       <%= render 'thumbnails', :product => @product %>
     </div>
