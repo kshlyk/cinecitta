@@ -1191,12 +1191,17 @@ ul.thumbnails li a img {
     color:white;
     width: 15px;
     height: 10px;
-    display: block;
+    display: inline;
     float: right;
     font-weight: bold;
     margin-right: -40px;
     margin-top: 6px;
 }
+
+.ie .cart_item_count {
+    margin-left: 25px;
+}
+
 .add-to-cart {
     float:right;
     margin: -35px -40px 0 0;
