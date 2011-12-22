@@ -34,11 +34,12 @@
           <li>
               <%= radio_button_tag "products[#{@product.id}]", v.id, checked, :disabled => !v.in_stock && !Spree::Config[:allow_backorders], :class=>"product-variant #{'focused' if checked}" %>
               <label for="products_<%= @product.id %>_<%= v.id %>" class="clabel <%= 'focused' if checked %>">
-                  <%= i %><% i+=1; -%>
+                <%= v.option_values.first.presentation.to_s.match(/^([0-9]+)(.*?)$/) %>
+                  <%#= i %><% i+=1; -%>
               </label>
                 <div class="product-color" style="background: <%== v.option_values.first.name %> !important;">
                   <div class="variant-cover">
-                    <div class="variant-description"><%= v.option_values.first.presentation %></div>
+                    <div class="variant-description"><%= v.option_values.first.presentation.gsub(/^([0-9]+)(.*?)$/,'') %></div>
                   </div>
                 </div>
               
@@ -68,12 +69,6 @@
       $(this).addClass('focused').next().addClass('focused');
     }
     $(document).ready(function() {
-      //$('#product-variants :radio').each(function(){
-        //alert($(this).css('background-image'))
-      //});
-       //$('#product-variants :label').focus(updateSelectedStyle);
-      
-       //$('#product-variants :label').blur(updateSelectedStyle);
        $('.clabel').click(updateSelectedStyle);
     })
 
