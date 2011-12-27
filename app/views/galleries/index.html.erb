@@ -25,7 +25,7 @@
         </div>
         <div class="gallery-picture">
           <%= image_tag(gallery.gallery_items.first.attachment.url(:normal)) if gallery.gallery_items.any? %>
-          <%= image_tag(gallery.gallery_items.last.attachment.url(:normal), :class=>'bp_pic') if gallery.gallery_items.any? %>
+          <%= image_tag(gallery.gallery_items.first.attachment.url(:normal), :class=>'bp_pic') if gallery.gallery_items.any? %>
           
         </div>
       </div>
