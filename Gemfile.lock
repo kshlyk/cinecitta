@@ -7,6 +7,13 @@ GIT
       spree_core (>= 0.30.0)
 
 GIT
+  remote: git://github.com/divineforest/spree_galleries.git
+  revision: 622a1f6d9f1f825f03bc8479130c002d158174b6
+  specs:
+    spree_galleries (1.0.0)
+      spree_core (>= 0.30.0)
+
+GIT
   remote: git://github.com/kalebwalton/spree-search-sku.git
   revision: 3933a65b52e50d336666f215f2d74f9ecca4d74b
   specs:
@@ -242,6 +249,7 @@ DEPENDENCIES
   spree!
   spree_blogging_spree!
   spree_events_list (~> 0.50.0)
+  spree_galleries!
   spree_i18n!
   spree_search_sku!
   sqlite3

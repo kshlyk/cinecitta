@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110510080413) do
+ActiveRecord::Schema.define(:version => 20111227102745) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -134,6 +134,27 @@ ActiveRecord::Schema.define(:version => 20110510080413) do
     t.datetime "begin_event"
     t.datetime "end_event"
     t.string   "start_time"
+  end
+
+  create_table "galleries", :force => true do |t|
+    t.string   "title",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "caption"
+  end
+
+  create_table "gallery_items", :force => true do |t|
+    t.string   "title"
+    t.string   "caption"
+    t.string   "attachment_content_type"
+    t.string   "attachment_file_name"
+    t.integer  "attachment_size"
+    t.datetime "attachment_updated_at"
+    t.integer  "attachment_width"
+    t.integer  "attachment_height"
+    t.integer  "gallery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "gateways", :force => true do |t|
