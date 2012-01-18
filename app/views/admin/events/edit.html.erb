@@ -1,7 +1,7 @@
 <%#= render :partial => 'admin/shared/configuration_menu' %>
 
-<h1>Новое занятие</h1>
+<h1>Изменить занятие</h1>
 <% form_for([:event, @event], :url => collection_url, :html => { :multipart => true }) do |f| %>
   <%= render :partial => "form", :locals => { :f => f } %>
-  <%= render :partial => 'admin/shared/new_resource_links' %>
+  <%= render :partial => 'admin/shared/edit_resource_links' %>
 <% end %>

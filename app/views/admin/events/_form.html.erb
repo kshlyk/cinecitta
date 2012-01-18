@@ -1,20 +1,41 @@
 <% content_for :head do %>
+<% end %>
 
+<style>
+  input.format-y-m-d {
+    width: auto;
+    font-size:1.5em;
+    padding:5px;
+  }
+  #errorExplanation h2 {
+    padding: 5px;
+    color: #C00;
+    font-size: 16px;
+    font-weight: bold;
+  }
+</style>
 
+<% if @event.errors.any? %>
+  <div id="errorExplanation">
+    <h2>Не удалось сохранить занятие по следующим причинам</h2>
+  </div>
 <% end %>
 
 <table class="admin-report" width="545">
   <tr>
     <td colspan="2">
-      <label>Название</label><br/>
-      <%= f.text_field :title, {"class" => "fullwidth title"} %>
+      <%= f.label :title, t('name') %>
+      <%= f.text_field :title, :class=>"fullwidth title" %>
+      <%= f.error_message_on :title %>
     </td>
   </tr>
 
   <tr>
     <td colspan="2">
       <label>Дата проведения</label><br/>
-      <%= f.datetime_select :begin_event, {"class" => "fullwidth title"}  %>
+      <%= f.spree_date_picker :begin_event, :prompt => true, :use_month_numbers => true%>
+      <%= f.error_message_on :begin_event %>
+      <%#= f.datetime_select :begin_event, {"class" => "fullwidth title"}, :include_blank => false  %>
     </td>
   </tr>
 

@@ -1,0 +1,31 @@
+<%#= render :partial => 'admin/shared/configuration_menu' %>
+
+<div class="toolbar">
+  <ul class="actions">
+    <li><%= button_link_to 'Новое занятие', new_object_url, :id => "new_event", :icon=>"add" %></li>
+  </ul>
+  <br class="clear"/>
+</div>
+<h1>Список занятий</h1>
+
+<table class="index listing">
+  <thead>
+    <tr>
+      <th width="120">Дата проведения</th>
+      <th><%=t("name")%></th>
+      <th width="120"><%= t('action') %></th>
+	  </tr>
+  </thead>
+	<tbody>
+	<% @events.each do |event| %>
+  	<tr class="<%= cycle('even', 'odd') %>">
+			<td><%= event.begin_event.strftime("%d.%m.%Y") %></td>
+      <td><%= link_to event.title, edit_object_url(event) %></td>
+			<td>
+        <%=link_to t("delete"), object_url(event), :method => :delete, :id => "delete_#{event.id}" %>
+      </td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+

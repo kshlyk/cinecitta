@@ -1053,16 +1053,21 @@ body.two-col #content {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+  height: 173px;
+  width: 173px;
   background: url(/images/product_image_bg.png);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-  height: 173px;
-  width: 173px;
+  
+  
 /*  width: 248px;*/
 }
 
-.ie .product-listing .product-image-wrapper { line-height: 173px;}
+.ie .product-listing .product-image-wrapper { 
+    height: 173px;
+/*    line-height: 173px;*/
+}
 .ie .product-listing .product-image-wrapper img {
     margin-top: auto;
 }
