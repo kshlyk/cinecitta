@@ -30,7 +30,7 @@
 <% @body_id = 'product-details' %>
 <% 
   if @product.has_variants?
-    style = ""; #"background:url(/images/product/p_box1.png) no-repeat;"
+    style = "margin-left:-10px;"; #"background:url(/images/product/p_box1.png) no-repeat;"
     bg = "/images/product/p_box1.png"
   else
     style = ""; #"background:url(/images/product/p_box.png) no-repeat; padding-bottom:45px;"
@@ -49,7 +49,7 @@
       </div>
     </div>
     <% end %>
-<div class="product_canvas" style='<%= style %>'>
+<div class="product_canvas" style="<%= style %>">
   <img src="<%= bg %>" class="product_canvas_bg">
   <div class="product_canvas_image">
     <div id="main-image">
@@ -61,7 +61,7 @@
     </div>
   </div>
 
-  <div class="product_canvas_description">
+  <div class="product_canvas_description" >
     <h2><%= @product.name %></h2>
     <span class="code">код <%= raw(@product.sku) %></span>
     <hr/>

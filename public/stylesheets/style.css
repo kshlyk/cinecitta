@@ -138,12 +138,20 @@ div#main_content {
 }
 
 .product_canvas div.product_canvas_image{
+    margin-left:4px;
     position:relative;
     z-index: 2;
     float:left;
-    width: 208px;
+    width: 200px;
+    overflow: hidden;
     height: 203px;
 }
+
+.product_canvas div.product_canvas_image img {
+    width: 190px;
+    height: auto;
+}
+
 .product_canvas div.product_canvas_description {
     float: left;
     position:relative;
