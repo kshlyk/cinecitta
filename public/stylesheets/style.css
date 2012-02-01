@@ -1637,8 +1637,9 @@ div.rating-cancel {
 }
 
 #registration #guest_checkout {
-  width: 51%;
+  width: 49%;
   float: right;
+  margin-top:-250px;
 }
 
 div#checkout #checkout_form_address #shipping label {
@@ -1673,17 +1674,17 @@ div#jGrowl div.jGrowl-notification.error {
 }
 
 #school_header {
-    background: url(/images/school_header_bg.png) top left no-repeat;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
     height: 183px;
     width: 930px;
     display: inline-block;
     margin-left: -50px;
     padding: 32px 0 0 35px;
     text-align: left;
+    background: url(/images/school_header_bg.png) top left no-repeat;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
 }
 
 .school_menu {
