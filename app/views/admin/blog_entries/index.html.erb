@@ -1,0 +1,70 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'blog' %>
+  <style>
+    .bold_green { color:green !important; font-weight:bold;  }
+  </style>
+<% end %>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_entry"), new_object_url, :icon => 'add' %></p>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t('blog_entries') %></h1>
+
+
+<% unless @blog_entries.blank? %>
+  <table class="entry-list index">
+    <tr>
+      <th style="width:70px">На главной</th>
+      <th class="date">Дата</th>
+      <th class="title">Заголовок</th>
+      <th></th> 
+    </tr>
+
+  <% @blog_entries.each do |blog_entry| %>
+    <tr id="<%= dom_id blog_entry %>">
+      <td>
+        <a href="#" itemid="<%= blog_entry.id %>" class='to_main <%=  "bold_green" if blog_entry.to_main %>' >
+          <%= blog_entry.to_main ? "Да" : "Нет" %>
+        </a>
+      </td>
+      <td><%= l( blog_entry.created_at.to_date, :format => :long) %></td>
+      <td><%= blog_entry.title %></td>
+      <td class="actions">
+        <%= link_to_edit blog_entry %>
+        &nbsp;
+        <%= link_to_delete blog_entry, :title => t('are_you_sure_blog_entry') %>
+      </td>
+    </tr>
+  <% end %>
+<% else %>
+  <p><%= t('no_blog_entries') %></p>
+<% end %>
+
+</table>
+
+<script type="text/javascript">
+  $(function(){
+    $('.to_main').click(function(){
+      var me = $(this)
+      $.ajax({
+        url:'/admin/blog_entries/'+me.attr('itemid')+'/toggle_main',
+        context:me,
+        success: function(data){
+          if(data.val){
+            $(this).addClass('bold_green').text('Да')
+          } else {
+            $(this).removeClass('bold_green').text('Нет')
+          }
+        }
+      })
+    })
+  })
+</script>
+
+

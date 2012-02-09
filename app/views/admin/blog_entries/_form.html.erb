@@ -15,6 +15,8 @@
   <%= form.error_message_on :title %>
 </p>
 
+
+
 <p>
 	<%= form.fields_for :blog_entry_image do |blog_entry_image_fields| %>
 		<%= blog_entry_image_fields.label :attachment, t(:blogs_main_image) %><br/>
@@ -23,10 +25,18 @@
 </p>
 
 <p>
-<%= form.label :body %><br />
+<%= form.label :body, 'Тело новости' %><br />
   <%= form.text_area :body, :id => 'blog_entry_body', :style => 'width: 700px' %>
   <%= form.error_message_on :body %>
 </p>
+
+<% unless params[:action].eql?('new') -%>
+<p style="width:650px">
+  <%= form.label :created_at, "Дата" %> <span class="required">*</span><br />
+  <%= form.date_select :created_at,  {"class" => "fullwidth title"} %>
+  <%= form.error_message_on :created_at %>
+</p>
+<% end -%>
 
 <p>
   <%= form.label :tag_list, 'Tag List' %><br />

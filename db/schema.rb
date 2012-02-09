@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111227102745) do
+ActiveRecord::Schema.define(:version => 20120208123512) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20111227102745) do
     t.string   "permalink"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "to_main",    :default => false, :null => false
   end
 
   create_table "calculators", :force => true do |t|
@@ -531,8 +532,6 @@ ActiveRecord::Schema.define(:version => 20111227102745) do
     t.string "name", :default => ""
     t.string "kind", :default => ""
   end
-
-  add_index "tags", ["name", "kind"], :name => "index_tags_on_name_and_kind"
 
   create_table "tax_categories", :force => true do |t|
     t.string   "name"

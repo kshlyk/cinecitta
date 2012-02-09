@@ -1,6 +1,14 @@
 Project::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  
+  namespace :admin do
+    resources :blog_entries do
+      member do
+        get 'toggle_main'
+      end
+    end
+  end
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
