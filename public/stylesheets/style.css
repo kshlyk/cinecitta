@@ -1029,7 +1029,6 @@ body.two-col #content {
 .product-listing {
   margin: 0;
   list-style: none;
-  overflow: auto;
 /*  overflow: scroll;*/
 /*  border: 1px solid red;*/
 }
