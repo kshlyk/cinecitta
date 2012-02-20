@@ -140,25 +140,27 @@
             <div class="flash errors"><%= flash[:error] %></div>
           <% end %>
         </noscript>
-          <% if @taxonomies %>
-            <% 
-              img_id = 1+rand(3);
-              img_style = ["", "margin-left:-100px;", "margin-left:-50px;"];
-              mc_style = ["", "", ""]
-            %>
-            <img src="/images/product/woman<%= img_id %>.png" style="<%= img_style[img_id-1] %>" class="girl_image"/>
-            <%= render :partial => "shared/news_short" %>
-            
-            <div id="main_content" style="<%= mc_style[img_id-1] %>">
-              <h1>Спецпредложения</h1>
-              <div class="hr stretch"></div>   
-              <% @taxonomies.select{|t| t.show_on_homepage }.each do |taxonomy| %>
-                <% taxonomy.taxons.each do |taxon| %>
-                  <%= render :partial => "shared/products", :locals => {:products => taxon_preview(taxon, 6), :taxon => taxon, :main_page=>true} %>
-                <% end %>
+        <% if @taxonomies %>
+          <% 
+            img_id = 1+rand(3);
+            img_style = ["", "margin-left:-100px;", "margin-left:-50px;"];
+            mc_style = ["", "", ""]
+          %>
+          <img src="/images/product/woman<%= img_id %>.png" style="<%= img_style[img_id-1] %>" class="girl_image"/>
+          <%= render :partial => "shared/news_short" %>
+          
+          <div id="main_content" style="<%= mc_style[img_id-1] %>">
+            <h1>Спецпредложения</h1>
+            <div class="hr stretch"></div>   
+            <ul class="product-listing">
+            <% @taxonomies.select{|t| t.show_on_homepage }.each do |taxonomy| %>
+              <% taxonomy.taxons.each do |taxon| %>
+                <%= render :partial => "shared/products", :locals => {:products => taxon_preview(taxon, 6), :taxon => taxon, :main_page=>true} %>
               <% end %>
-            </div>
-          <% end %>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
 
         <%= yield %>
       </div>
@@ -166,9 +168,7 @@
     </div>
   </div>
   <div class="footer_fake"></div>
-
 </div>
-
 <div class="footer" align="center">
   <div style="overflow:auto; color:#5D292B; padding-top:20px; font-size: 13px; text-align:left;   width: 950px !important;">
     <div id="footer_left_content" style="float:left;">

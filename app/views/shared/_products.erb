@@ -16,7 +16,9 @@
 <% end %>
  
 <% if products.any? %>
+<% unless mpage -%>
 <ul class="product-listing">
+<% end -%>
   <% products.each do |product| %>
     <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
       <li id="product_<%= product.id %>" style="<%== 'margin-right: 65px; margin-bottom: 70px;' if mpage %>">
@@ -40,13 +42,16 @@
             <div align="center" style="height: 15px;"><%= render 'shared/rating', :product => product %></div>
           <% end %>  
           <%= link_to raw("<span class='price selling'>#{product_price(product)}</span>"), product, :class => 'info' %>
-          </end>
+          </div>
         <% end %>
       </li>
     <% end %>
   <% end %>
+<% unless mpage -%>
 </ul>
+<% end -%>
 <% end %>
+
  
 <% if paginated_products.respond_to?(:total_pages)
       params.delete(:search)
