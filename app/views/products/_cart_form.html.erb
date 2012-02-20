@@ -26,7 +26,10 @@
       
       <ul>
         <% has_checked = false
-        @product.variants.active.sort_by{|v| v.option_values.first.presentation.to_s.match(/^([0-9]+)(.*?)$/)[0].to_i}.each_with_index do |v,index|
+        @product.variants.active.sort_by{|v| 
+          v.option_values.first.presentation.to_s.match(/^([0-9]+)(.*?)$/) ? v.option_values.first.presentation.to_s.match(/^([0-9]+)(.*?)$/)[0].to_i : 0
+        }.each_with_index do |v,index|
+
           next if v.option_values.empty? || (!v.in_stock && !Spree::Config[:show_zero_stock_products])
           checked = !has_checked && (v.in_stock || Spree::Config[:allow_backorders])
           has_checked = true if checked 
