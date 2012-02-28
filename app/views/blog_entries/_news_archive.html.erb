@@ -1,4 +1,4 @@
-Год:&nbsp;&nbsp;| <%= raw((2011..Time.now.year).map{|k| params[:year].eql?(k.to_s) ? k : link_to(k, "/blog/#{k}")}.join("  |  ")) %> |<br/>
+<b>Год:&nbsp;&nbsp;| <%= raw((2011..Time.now.year).map{|k| params[:year].eql?(k.to_s) ? k : link_to(k, "/blog/#{k}")}.join("  |  ")) %> |<br/>
 
 <% ms = %w(нихуябрь январь февраль март апрель май июнь июль август сентябрь октябрь ноябрь декабрь) -%>
 
@@ -7,6 +7,7 @@
     params[:month].eql?(v.to_s) ? (ms[v]+params[:year]) : link_to(ms[v]+params[:year], news_archive_path(:year=> params[:year],:month=>v))
   }.join("  |  "))
 %> |<br/>
+</b>
 <!-- 
 <ul id="news-archive">
 <% news_archive.to_a.reverse.each do |year, months_with_entries| %>
