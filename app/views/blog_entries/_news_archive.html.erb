@@ -1,4 +1,4 @@
-Год:&nbsp;&nbsp;| <%= raw(news_archive.map{|k,v| params[:year].eql?(k.to_s) ? k : link_to(k, "/blog/#{k}")}.join("  |  ")) %> |<br/>
+Год:&nbsp;&nbsp;| <%= raw((2011..Time.now.year).map{|k| params[:year].eql?(k.to_s) ? k : link_to(k, "/blog/#{k}")}.join("  |  ")) %> |<br/>
 
 <% ms = %w(нихуябрь январь февраль март апрель май июнь июль август сентябрь октябрь ноябрь декабрь) -%>
 
