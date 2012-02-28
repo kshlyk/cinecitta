@@ -1,6 +1,6 @@
 <% @blog_entries = BlogEntry.find(:all, :conditions=>{:to_main=>true}, :order=>"created_at DESC", :limit=>3) %>
 <div id="short-news-block">
-<div id="snews">Новости</div>
+<div id="snews"><%= link_to "Новости", '/blog_entries' %></div>
 <% if !@blog_entries.empty? %>
   <ul id="short-blog-entries">
     <% @blog_entries.each do |e| %>

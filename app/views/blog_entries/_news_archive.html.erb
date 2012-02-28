@@ -1,0 +1,36 @@
+Год:&nbsp;&nbsp;| <%= raw(news_archive.map{|k,v| params[:year].eql?(k.to_s) ? k : link_to(k, "/blog/#{k}")}.join("  |  ")) %> |<br/>
+
+<% ms = %w(нихуябрь январь февраль март апрель май июнь июль август сентябрь октябрь ноябрь декабрь) -%>
+
+Месяц:&nbsp;&nbsp;| <%= raw((1..12).map{|v| 
+
+    params[:month].eql?(v.to_s) ? (ms[v]+params[:year]) : link_to(ms[v]+params[:year], news_archive_path(:year=> params[:year],:month=>v))
+  }.join("  |  "))
+%> |<br/>
+<!-- 
+<ul id="news-archive">
+<% news_archive.to_a.reverse.each do |year, months_with_entries| %>
+  <% d = Date.parse("1/#{year}") %>
+
+  <li> <span></span>
+    <%= link_to(year, news_archive_path(:year => d.year)) %>
+
+    <ul class="months">
+    <% months_with_entries.each do |month, entries| %>
+      <% d = Date.parse("#{year}, #{month}") %>
+
+      <li> <span></span>
+        <%= link_to I18n.l(d, :format => "%B"), news_archive_path(:year => d.year, :month => d.month) %>
+        <ul class="posts">
+          <% entries.each do |entry| %>
+            <li><%= link_to(entry.title, entry_permalink(entry)) %></li>
+          <% end %>
+        </ul>
+      </li>
+
+    <% end %>
+    </ul>
+  </li>
+<% end %>
+</ul>
+-->

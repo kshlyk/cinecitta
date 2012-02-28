@@ -23,8 +23,8 @@
 </head>
 <%
    if @body_class.nil?
-     if content_for?(:sidebar)
-       @body_class = 'two-col'
+     if content_for?(:sidebar) 
+       @body_class = params[:controller].eql?("blog_entries") ? 'one-col' : 'two-col'
      else
        @body_class = 'one-col'
      end

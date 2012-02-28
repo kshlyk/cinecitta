@@ -18,6 +18,13 @@ div#snews {
     padding-top: 3px;
 }
 
+div#snews a {
+    font-size: 13pt;
+    color: #531c1f;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+}
+
 
 #short-blog-entries {
     
