@@ -1020,7 +1020,7 @@ button, a.button, input.button {
 body.two-col #content {
   float: right;
   padding:0px; margin:0px;
-  min-height: 550px;
+  min-height: 750px;
   width: 755px;
 }
 
