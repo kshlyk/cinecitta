@@ -1836,6 +1836,7 @@ div.sub_menu_wrapper {
     position: absolute;
     top: 50px;
     left: 20px;
+    z-index: 200;
 }
 div.sub_menu_wrapper ul.sub_menu {
 /*    display: none;*/
