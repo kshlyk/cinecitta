@@ -52,9 +52,36 @@
                 <td>
                   <ul class="header_menu">
                     <% for page in Page.header_links do %>
-                      <li<%== ' style="margin-left:-15px;"' if Page.header_links.first.eql?(page) %>><%= link_to page.title, page.link %></li>
+                      <li<%== ' style="margin-left:-15px;"' if Page.header_links.first.eql?(page) %>>
+                        <% subpages = Page.all(:conditions=>"slug LIKE '#{page.link}/%'") -%>
+                        <%= link_to page.title, (subpages.any? ? '#' : page.link), :class=>(subpages.any? ? 'has_submenu' : '') %>
+                        <% unless subpages.empty? -%>
+                          <div class='sub_menu_wrapper'>
+                            <div id="top_submenu_pointer"></div>
+                            <ul class='sub_menu'>
+                            <% subpages.each do |sp| -%>
+                              <% c = "first" if sp.eql?(subpages.first)  -%>
+                              <% c = "last" if sp.eql?(subpages.last)  -%>
+                              <li class='<%= c %>'><%= link_to sp.title, sp.link %></li>
+                            <% end -%>
+                            </ul>
+                          </div>
+                        <% end -%>
+                        <%#= page.inspect %>
+                      </li>
                     <% end %>
                   </ul>
+                  <script type="text/javascript">
+                    $(function(){
+                      $(document).click(function(e){
+                        if(!$(e.target).hasClass('sub_menu_wrapper') && !$(e.target).hasClass('has_submenu'))
+                          $("div.sub_menu_wrapper").hide()
+                      })
+                      $("a.has_submenu").click(function(){
+                        $(this).next().css('left', $(this).position().left-60+"px").show()
+                      })
+                    })
+                  </script>
                 </td>
                 <td><span id="phone_number">+7 (906) 720-70-70</span></td>
               </tr>

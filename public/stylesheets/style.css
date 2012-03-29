@@ -1831,4 +1831,61 @@ ul.gallery-image-pages li.selected {
 ul.gallery-image-pages li img { display: none;}
 
 
+div.sub_menu_wrapper {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+}
+div.sub_menu_wrapper ul.sub_menu {
+/*    display: none;*/
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+div.sub_menu_wrapper ul.sub_menu li{
+    float: none !important;
+    padding: 0px;
+    font-size: 9pt;
+    padding-left: 15px;
+    width: 168px;
+    background: url("/images/left_tree/middle.png");
+    background-repeat: no-repeat;
+    margin-top: -5px;
+    margin-left: 6px;
+    line-height: 29px;
+}
+div.sub_menu_wrapper ul.sub_menu li a{
+    text-decoration: none;
+    font-weight: normal;
+}
+
+div.sub_menu_wrapper ul.sub_menu li.first{
+    background: url("/images/left_tree/top.png");
+    background-repeat: no-repeat;
+    height: 34px;
+    margin-bottom: -9px;
+    padding-top: 3px;
+}
+
+div.sub_menu_wrapper ul.sub_menu li.last{
+    background: url("/images/left_tree/bottom_top.png");
+    background-repeat: no-repeat;
+    height: 34px;
+    padding-top: 0px;
+}
+
+
+div.sub_menu_wrapper div#top_submenu_pointer {
+    background: url(/images/left_tree/pointer.png);
+    width: 27px;
+    height: 15px;
+    margin-left: 80px;
+}
+
+
+
+
 
