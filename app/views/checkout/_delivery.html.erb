@@ -7,7 +7,7 @@
           <label>
             <%= radio_button(:order, :shipping_method_id, shipping_method[:id]) %>
             <%= shipping_method[:name] %> 
-            <%= (shipping_method[:cost] > 0) ? number_to_currency(shipping_method[:cost]) : "бесплатно" %>
+            <%= (shipping_method[:cost] > 0) ? number_to_currency(shipping_method[:cost]) : "" %>
           </label><br />
         <% end %>
       </p>
