@@ -8,6 +8,14 @@ Project::Application.routes.draw do
         get 'toggle_main'
       end
     end
+
+    resources :galleries do
+      resources :gallery_items do
+        member do
+          get 'crop'
+        end 
+      end
+    end
   end
 
   # Sample of regular route:

@@ -8,15 +8,23 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Project
   class Application < Rails::Application
-  require 'spree_site'
-  config.middleware.use "RedirectLegacyProductUrl"
-  config.middleware.use "SeoAssist"
+    config.middleware.use "RedirectLegacyProductUrl"
+    config.middleware.use "SeoAssist"
+
+    config.to_prepare do
+      Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
+        Rails.configuration.cache_classes ? require(c) : load(c)
+      end
+
+      Spree::Config.set(:products_per_page => 1000000) 
+    end
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/lib)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.

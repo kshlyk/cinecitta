@@ -1,0 +1,17 @@
+<% 
+  object = f.object
+  attachment_name = local_assigns[:attachment_name] || :attachment
+  attachment = object.send attachment_name
+  cropper = object.send "#{attachment_name}_cropper"
+  params_key = object.class.name.demodulize.tableize.singularize
+%>
+
+<% cropper.styles.each do |style, inherited_styles| %>
+  <div class="image-crop" data-original-width="<%= cropper.geometry(:original).width %>" data-aspect-ratio="<%= cropper.aspect_ratio(style.name) %>">
+    <h3><%= style.geometry.sub('#', '') %></h3>
+    <%= image_tag attachment.url(:cropper), :style => 'width: 600px;' %>
+    <% for crop_data in %w(x y w h) do %>
+      <%= hidden_field_tag "#{params_key}[#{attachment_name}_crop_data][#{style.name}][#{crop_data}]", '', :class => "crop-#{crop_data}", :id => nil %>
+    <% end %>
+  </div>
+<% end %>

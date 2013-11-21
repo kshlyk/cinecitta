@@ -1,0 +1,14 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.imagesloaded.min' %>
+  <%= javascript_include_tag 'admin/jquery.Jcrop.min' %>
+  <%= javascript_include_tag 'admin/image_cropper' %>
+  <%= stylesheet_link_tag 'admin/jquery.Jcrop' %>
+<% end %>
+
+<%= form_for [:admin, @gallery, @gallery_item], :html => { :method => :put, :multipart => true } do |f| %>
+  <%= render :partial => 'admin/shared/cropper_fields', :locals => { :f => f } %>
+  <p class='form-buttons'>
+    <%= button t('update') %>
+    <%= t('or') %> <%= link_to t('cancel'), [:admin, @gallery, :gallery_items], :id => 'cancel_link' %>
+  </p>
+<% end %>
