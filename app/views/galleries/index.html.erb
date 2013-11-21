@@ -1,6 +1,4 @@
-<% content_for :head do %>
-  <%#= stylesheet_link_tag "galleries" %>
-<% end %>
+
 
 <h1>Галерея</h1>
 
@@ -8,25 +6,25 @@
   <%= t(:ext_galleries_no_galleries) %>
 <% else %>
   <div class="gallery-listing">
-    <% @galleries.each do |gallery| %>
+    <% @galleries.each_with_index do |gallery, g| %>
       <div class="gallery">
         <div class="gallery-title-wrapper">
           <h2 class="gallery-title"><%= gallery.title %></h2>
           <span class="gallery-caption"><%= gallery.caption %></span>
           <br/>
           <ul class="gallery-image-pages">
-            <% i=1; gallery.gallery_items.each do |item| -%>
-              <li class="<%= 'selected' if i.eql?(1) %>">
-                <%= i %>
-                <%= image_tag item.attachment.url(:normal) %>
-              </li>
-            <% i+=1; end if gallery.gallery_items.any?-%>
+            <% gallery.gallery_items.each_with_index do |item, i| %>
+              <li class="<%= 'selected' if i == 0 %>"><%= i + 1 %></li>
+            <% end %>
           </ul>
         </div>
         <div class="gallery-picture">
-          <%= image_tag(gallery.gallery_items.first.attachment.url(:normal)) if gallery.gallery_items.any? %>
-          <%= image_tag(gallery.gallery_items.first.attachment.url(:normal), :class=>'bp_pic') if gallery.gallery_items.any? %>
-          
+          <% gallery.gallery_items.each_with_index do |item, i| %>
+            <% if i == 0 %>
+              <%= image_tag item.attachment.url(:normal), :class => 'bp-pic' %>
+            <% end %>
+            <%= link_to image_tag(item.attachment.url(:normal)), item.attachment.url(:large), :style => "display: #{i == 0 ? 'block' : 'none'};", :rel => "gallery-#{g}" %>
+          <% end %>
         </div>
       </div>
       <hr>
@@ -35,23 +33,44 @@
   </div>
 <% end %>
 
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.colorbox-min' %>
+  <%= stylesheet_link_tag 'colorbox' %>
 
-<script type="text/javascript">
-  $(function(){
-    $("ul.gallery-image-pages>li").click(function(){
-      $(this).parent().children().removeClass('selected');
-      $(this).addClass('selected')
-      $src = $(this).find('img').attr('src');
-      $img = $(this).parent().parent().parent().find('div.gallery-picture>img:first');
-      $img2 = $(this).parent().parent().parent().find('div.gallery-picture>img:last');
-      
-      $img.attr('src',$src)
-      $img2.fadeOut(function(){
-        $(this).attr('src',$src).fadeIn('fast')
-      })
-      
-      
-    })
-  })
-</script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.gallery').each(function(){
+        var $pages = $('.gallery-image-pages li', this);
+        if($pages.length){
+          var $thumbs = $('.gallery-picture a', this),
+              $bpPic = $('.bp-pic', this),
+              currentIndex = 0, index;
 
+          $pages.click(function(){
+            index = $pages.index($(this));
+            if(currentIndex != index){
+              $pages.removeClass('selected');
+              $(this).addClass('selected');
+              $thumbs.eq(currentIndex).fadeOut('slow', function(){
+                $(this).hide(); // Hide at the and is jQuery 1.4 fix
+              });
+              $thumbs.eq(index).fadeIn('slow', function(){
+                $bpPic.attr('src', $('img', this).attr('src'));
+              });
+              currentIndex = index;
+            }
+          });
+
+          $thumbs.colorbox({
+            maxWidth: '100%',
+            maxHeight: '100%',
+            close: 'закрыть',
+            current: '',
+            previous: 'пред',          
+            next: 'след',
+          });
+        }
+      });
+    });
+  </script>
+<% end %>

@@ -1828,9 +1828,6 @@ ul.gallery-image-pages li.selected {
     font-weight: bold;
 }
 
-ul.gallery-image-pages li img { display: none;}
-
-
 div.sub_menu_wrapper {
     display: none;
     position: absolute;
