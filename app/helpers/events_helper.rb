@@ -14,11 +14,11 @@ module EventsHelper
   end
 
   class Calendar < Struct.new(:view, :date, :callback)
-    delegate :content_tag, to: :view
-    delegate :t, to: :view
+    delegate :content_tag, :to => :view
+    delegate :t, :to => :view
 
     def table
-      content_tag :table, class: 'calendar' do
+      content_tag :table, :class => 'calendar' do
         header + week_rows
       end
     end
@@ -42,7 +42,7 @@ module EventsHelper
     end
 
     def day_cell(day)
-      content_tag :td, view.capture(day, &callback), class: day_classes(day)
+      content_tag :td, view.capture(day, &callback), :class => day_classes(day)
     end
 
     def day_classes(day)
