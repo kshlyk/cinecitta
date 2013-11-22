@@ -18,6 +18,8 @@ Project::Application.routes.draw do
     end
   end
 
+  match 'school/timetable/(:month)' => 'events#calendar', :as => :events_calendar, :constraints => {:month => /\d{1,2}\.\d{4}/}
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

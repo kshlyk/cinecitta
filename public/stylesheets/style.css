@@ -1723,55 +1723,63 @@ div#jGrowl div.jGrowl-notification.error {
     font-weight: bold;
 }
 
+.calendar{
+  width: 920px;
+  background: #FFF;
 
-.timetable {
-    width: 920px;
-    background-color: white;
 }
-.timetable td {
-    font-weight: bold;
-    margin: 0 0 0 0;
-    vertical-align: top;
+.calendar th{
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  text-transform: lowercase;
+  font-weight: normal;
+  font-family: Arial;
 }
-
-
-.timetable td.cld_ {
-    width: 135px;
-    height: 102px;
-    overflow: hidden;
-    border: 1px solid #EBEBEB;
-    vertical-align: top;
-    font-size:10px;
+.calendar td {
+  width: 14.285%;
+  padding: 4px 5px;
+  vertical-align: top;
+  font-size: 10px;
+  font-weight: bold;
+  border: 1px solid #EBEBEB;
+  font-family: Arial;
 }
-.timetable td.cld_marked {
-    font-size:8px;
+.calendar td.other-month{
+  color: #666;
+  background: #F1F1F1;
 }
-
-.timetable p {
-    font-weight: bold;
-    margin: 0 0 0 0;
+.calendar td .body{
+  min-height: 90px;
 }
-
-span.cld_title {
-    font-weight:bold;
-    font-size: 9px;
-    font-family: Tahoma;
+.calendar td .time{
+  min-height: 15px;
 }
 
-.next_school_link {
-    float: right;
-    font-size: 16px;
-    font-weight: bold;
-    color: #5D292B;
-    margin-right: -180px;
+#events-calendar h2{
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #333;
+  font-weight: bold;
 }
-.pre_school_link {
-    float: left;
-    font-size: 16px;
-    font-weight: bold;
-    color: #5D292B;
+#events-calendar .navigation{
+  height: 24px;
+  margin-top: 20px;
 }
-
+#events-calendar .navigation a{
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #5D292B;
+  text-transform: lowercase;
+}
+#events-calendar .navigation a.previous{
+  float: left;
+}
+#events-calendar .navigation a.next{
+  float: right;
+  margin-right: -180px;
+}
 
 .gallery {
     overflow: auto;

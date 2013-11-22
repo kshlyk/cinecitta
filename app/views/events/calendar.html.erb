@@ -1,0 +1,17 @@
+<div id="events-calendar">
+  <h2><%= t :events_calendar_for, :date => l(@date, :format => '%B') %></h2>
+
+  <% calendar @date do |date| %>
+    <div class="date"><%= date.day %></div>
+    <div class="body">
+      <% @events.select{ |event| event.date == date }.each do |event| %>
+        <div class="time"><%= event.time %></div>
+        <%= event.name %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="navigation">
+    <%= previous_events_month_link @date  %>
+    <%= next_events_month_link @date  %>
+  </div>
+</div>
