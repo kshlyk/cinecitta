@@ -116,6 +116,7 @@
       <% for page in Page.footer_links do %>
         <li class="<%= 'selected' if page.eql?(@page) %>"><%= link_to page.title, page.link %></li>
       <% end %>
+      <li class="<%= 'selected' if controller_name == 'events' %>"><%= link_to t(:schedule), events_calendar_path %></li>
     </ul>
 
       <%= render :partial => 'shared/comparable_products' if defined?(SpreeCompareProducts) %>

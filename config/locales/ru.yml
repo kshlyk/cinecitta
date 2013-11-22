@@ -12,3 +12,4 @@ ru:
   new_event: Новое событие 
   editing_event: Редактирование события
   events_calendar_for: 'Распиcание занятий на %{date}'
+  schedule: Распиcание
