@@ -1,3 +1,13 @@
 ru:
-  events: Занятия
+  ru:
+  activerecord:
+    attributes:
+      event:
+        name: Название
+        date: Дата
+        time: Время
   crop: Обрезать
+
+  events: События
+  new_event: Новое событие 
+  editing_event: Редактирование события

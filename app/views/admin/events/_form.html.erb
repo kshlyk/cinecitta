@@ -1,42 +1,21 @@
-<% content_for :head do %>
-<% end %>
+<div class="yui-gc">
+  <div class="yui-u first">
+    <%= f.field_container :name do %>
+      <%= f.label :name %> <span class='required'>*</span><br />
+      <%= f.text_field :name, :class => 'fullwidth title' %>
+      <%= f.error_message_on :name %>
+    <% end %>
 
-<style>
-  input.format-y-m-d {
-    width: auto;
-    font-size:1.5em;
-    padding:5px;
-  }
-  #errorExplanation h2 {
-    padding: 5px;
-    color: #C00;
-    font-size: 16px;
-    font-weight: bold;
-  }
-</style>
+    <%= f.field_container :date do %>
+      <%= f.label :date %> <span class='required'>*</span><br />
+      <%= f.spree_date_picker :date, {}, {:style => 'width:220px;'} %>
+      <%= f.error_message_on :date %>
+    <% end %>
 
-<% if @event.errors.any? %>
-  <div id="errorExplanation">
-    <h2>Не удалось сохранить занятие по следующим причинам</h2>
+    <%= f.field_container :time do %>
+      <%= f.label :time %><br />
+      <%= f.text_field :time %>
+      <%= f.error_message_on :time %>
+    <% end %>
   </div>
-<% end %>
-
-<table class="admin-report" width="545">
-  <tr>
-    <td colspan="2">
-      <%= f.label :title, t('name') %>
-      <%= f.text_field :title, :class=>"fullwidth title" %>
-      <%= f.error_message_on :title %>
-    </td>
-  </tr>
-
-  <tr>
-    <td colspan="2">
-      <label>Дата проведения</label><br/>
-      <%= f.spree_date_picker :begin_event, :prompt => true, :use_month_numbers => true%>
-      <%= f.error_message_on :begin_event %>
-      <%#= f.datetime_select :begin_event, {"class" => "fullwidth title"}, :include_blank => false  %>
-    </td>
-  </tr>
-
-</table>
+</div>

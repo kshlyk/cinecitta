@@ -1,31 +1,33 @@
-<%#= render :partial => 'admin/shared/configuration_menu' %>
-
-<div class="toolbar">
-  <ul class="actions">
-    <li><%= button_link_to 'Новое занятие', new_object_url, :id => "new_event", :icon=>"add" %></li>
+<div class='toolbar'>
+  <ul class='actions'>
+    <li id="new_ot_link">
+      <%= button_link_to t(:new_event), new_object_url, :icon => 'add' %>
+    </li>
   </ul>
-  <br class="clear"/>
+  <br class='clear' />
 </div>
-<h1>Список занятий</h1>
 
-<table class="index listing">
-  <thead>
-    <tr>
-      <th width="120">Дата проведения</th>
-      <th><%=t("name")%></th>
-      <th width="120"><%= t('action') %></th>
-	  </tr>
-  </thead>
-	<tbody>
-	<% @events.each do |event| %>
-  	<tr class="<%= cycle('even', 'odd') %>">
-			<td><%= event.begin_event.strftime("%d.%m.%Y") %></td>
-      <td><%= link_to event.title, edit_object_url(event) %></td>
-			<td>
-        <%=link_to t("delete"), object_url(event), :method => :delete, :id => "delete_#{event.id}" %>
+<h1><%= t :events %></h1>
+
+<table class='index'>
+  <tr>
+    <th><%= Event.human_attribute_name :name %></th>
+    <th><%= Event.human_attribute_name :date %></th>
+    <th><%= Event.human_attribute_name :time %></th>
+    <th class="actions"></th>
+  </tr>
+  <% @events.each do |event| %>
+    <tr id="<%= dom_id event %>">
+      <td><%= event.name %></td>
+      <td><%= event.date.strftime '%d.%m.%Y' %></td>
+      <td><%= event.time %></td>
+      <td class="actions">
+        <%= link_to_edit event %>
+        &nbsp;
+        <%= link_to_delete event %>
       </td>
-		</tr>
-	<% end %>
-	</tbody>
+    </tr>
+  <% end %>
 </table>
+
 

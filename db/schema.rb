@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120208123512) do
+ActiveRecord::Schema.define(:version => 20131121202908) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -119,22 +119,11 @@ ActiveRecord::Schema.define(:version => 20120208123512) do
   end
 
   create_table "events", :force => true do |t|
-    t.string   "title"
-    t.text     "venue"
-    t.string   "sponsor"
-    t.string   "further_information"
-    t.text     "summary"
-    t.text     "full_description"
-    t.boolean  "visible"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "begin_event"
-    t.datetime "end_event"
-    t.string   "start_time"
+    t.date     "date"
+    t.string   "time"
   end
 
   create_table "galleries", :force => true do |t|
@@ -529,9 +518,11 @@ ActiveRecord::Schema.define(:version => 20120208123512) do
   add_index "taggings", ["taggable_id", "taggable_type"], :name => "index_taggings_on_taggable_id_and_taggable_type"
 
   create_table "tags", :force => true do |t|
-    t.string "name", :default => ""
-    t.string "kind", :default => ""
+    t.string "name", :limit => 128, :default => ""
+    t.string "kind", :limit => 128, :default => ""
   end
+
+  add_index "tags", ["name", "kind"], :name => "index_tags_on_name_and_kind"
 
   create_table "tax_categories", :force => true do |t|
     t.string   "name"
